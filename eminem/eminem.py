@@ -3,7 +3,7 @@ import re
 
 # Step 1: Extract Data from PDF
 def extract_songs_from_pdf(pdf_path, albums):
-    # Pattern to match song names followed by view counts
+    # Updated pattern to match song names including those with features
     pattern = re.compile(r'^\d+\s+(.*?)\s+(\d[\d,]*)\s+\d+')
 
     extracted_songs = []
@@ -19,7 +19,10 @@ def extract_songs_from_pdf(pdf_path, albums):
             if text:
                 lines = text.split("\n")
                 for line in lines:
-                    # Skip lines until the actual song list starts (indicated by the presence of the first song number)
+                    # Debugging: Print each line to see what is extracted
+                    print(f"{line}")  # This will output each line to the console
+                    
+                    # Skip lines until the actual song list starts
                     if not song_list_started:
                         if re.match(r'^\d+\s+', line):  # Detects the start of the song list by matching a line that starts with a number
                             song_list_started = True
@@ -32,11 +35,13 @@ def extract_songs_from_pdf(pdf_path, albums):
 
                             # Check if the song is in any of the albums and hasn't been found before
                             song_matched = False
+                            clean_song_name = re.sub(r'\(feat.*?\)', '', song_name).strip().lower()
+                            
                             for album, songs in albums.items():
-                                if song_name.lower() in [song.lower() for song in songs] and song_name.lower() not in found_songs:
-                                    extracted_songs.append((song_name, view_count))
-                                    found_songs.add(song_name.lower())
-                                    matched_songs.append(song_name)
+                                if clean_song_name in [song.lower() for song in songs] and clean_song_name not in found_songs:
+                                    extracted_songs.append((clean_song_name, view_count))
+                                    found_songs.add(clean_song_name)
+                                    matched_songs.append(clean_song_name)
                                     song_matched = True
                                     break  # Stop searching this song once found
                             
@@ -134,29 +139,21 @@ albums = {
         "Somebody Save Me"
     ]
 }
-
-# Path to the PDF file (adjust the path according to your setup)
+# Path to the PDF file 
 pdf_path = 'eminem/spotify_songs.pdf'
 
 # Extract songs and views from the PDF
 extracted_songs, matched_songs, unmatched_songs = extract_songs_from_pdf(pdf_path, albums)
 
-# Map songs to albums and calculate total views
+# Debugging: Print the unmatched songs
+print("Unmatched songs:", unmatched_songs)
+
+# Map extracted songs to albums and calculate the total views per album
 album_views = map_songs_to_albums(extracted_songs, albums)
 
 # Rank the albums by total views
 ranked_albums = rank_albums(album_views)
 
-# Display the ranked albums
-for rank, (album, views) in enumerate(ranked_albums, 1):
-    print(f"{rank}. {album}: {views} views")
-
-# Print the summary of found and not found songs
-print("\nSummary:")
-print(f"Total songs found: {len(matched_songs)}")
-print(f"Total songs not found: {len(unmatched_songs)}")
-
-if unmatched_songs:
-    print("\nSongs not matched:")
-    for song in unmatched_songs:
-        print(f"- {song}")
+# Output the ranked albums
+for album, views in ranked_albums:
+    print(f"{album}: {views} views")
