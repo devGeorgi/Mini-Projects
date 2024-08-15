@@ -11,29 +11,37 @@ def extract_songs_from_pdf(pdf_path, albums):
     matched_songs = []
     unmatched_songs = []
 
+    song_list_started = False  # Flag to determine when the actual song list starts
+
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:
             text = page.extract_text()
             if text:
                 lines = text.split("\n")
                 for line in lines:
-                    match = pattern.match(line)
-                    if match:
-                        song_name = match.group(1).strip()
-                        view_count = int(match.group(2).replace(",", ""))
+                    # Skip lines until the actual song list starts (indicated by the presence of the first song number)
+                    if not song_list_started:
+                        if re.match(r'^\d+\s+', line):  # Detects the start of the song list by matching a line that starts with a number
+                            song_list_started = True
 
-                        # Check if the song is in any of the albums and hasn't been found before
-                        song_matched = False
-                        for album, songs in albums.items():
-                            if song_name.lower() in [song.lower() for song in songs] and song_name.lower() not in found_songs:
-                                extracted_songs.append((song_name, view_count))
-                                found_songs.add(song_name.lower())
-                                matched_songs.append(song_name)
-                                song_matched = True
-                                break  # Stop searching this song once found
-                        
-                        if not song_matched:
-                            unmatched_songs.append(song_name)
+                    if song_list_started:
+                        match = pattern.match(line)
+                        if match:
+                            song_name = match.group(1).strip()
+                            view_count = int(match.group(2).replace(",", ""))
+
+                            # Check if the song is in any of the albums and hasn't been found before
+                            song_matched = False
+                            for album, songs in albums.items():
+                                if song_name.lower() in [song.lower() for song in songs] and song_name.lower() not in found_songs:
+                                    extracted_songs.append((song_name, view_count))
+                                    found_songs.add(song_name.lower())
+                                    matched_songs.append(song_name)
+                                    song_matched = True
+                                    break  # Stop searching this song once found
+                            
+                            if not song_matched:
+                                unmatched_songs.append(song_name)
     
     return extracted_songs, matched_songs, unmatched_songs
 
@@ -53,7 +61,7 @@ def map_songs_to_albums(extracted_songs, albums):
 def rank_albums(album_views):
     return sorted(album_views.items(), key=lambda item: item[1], reverse=True)
 
-# Defining the albums and their songs from the user's input
+# Defining the albums and their songs
 albums = {
     "The Slim Shady LP": [
         "My Name Is", "Guilty Conscience", "Brain Damage", "If I Had", "'97 Bonnie & Clyde", 
@@ -127,8 +135,8 @@ albums = {
     ]
 }
 
-# Path to the PDF file (ensure the PDF is in the same folder as this script)
-pdf_path = 'spotify_songs.pdf'
+# Path to the PDF file (adjust the path according to your setup)
+pdf_path = 'eminem/spotify_songs.pdf'
 
 # Extract songs and views from the PDF
 extracted_songs, matched_songs, unmatched_songs = extract_songs_from_pdf(pdf_path, albums)
@@ -148,7 +156,6 @@ print("\nSummary:")
 print(f"Total songs found: {len(matched_songs)}")
 print(f"Total songs not found: {len(unmatched_songs)}")
 
-# Print out the songs that were not found
 if unmatched_songs:
     print("\nSongs not matched:")
     for song in unmatched_songs:
