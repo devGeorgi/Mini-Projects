@@ -53,12 +53,12 @@
 53 Business 195,955,567 171,474
 54 * Last One Standing (feat. Polo G, Mozzy & E… 189,806,355 62,115
 55 Guilty Conscience 184,651,466 69,249
-56 Walk On Water (feat. Beyoncé) 178,135,024 13,351
+56 Walk On Water 178,135,024 13,351
 57 White America 173,900,780 52,290
 58 Those Kinda Nights (feat. Ed Sheeran) 167,607,024 32,348
 59 Role Model 161,664,823 99,845
 60 Headlights 155,872,717 27,039
-61 You Gon’ Learn (feat. Royce Da 5'9" & White G… 155,171,713 26,399
+61 You Gon' Learn 155,171,713 26,399
 62 Never Enough 153,886,084 216,022
 63 Legacy 153,482,624 20,895
 64 25 To Life 150,489,524 27,187
@@ -102,7 +102,7 @@
 102 Criminal 92,896,873 35,777
 103 * Gospel (with Eminem) 91,515,605 74,323
 104 * The Hills - Remix 91,359,085 22,451
-105 Talkin’ 2 Myself 90,955,631 16,358
+105 Talkin' To Myself 90,955,631 16,358
 106 Nice Guy (with Jessie Reyez) 89,722,046 7,277
 107 In Your Head 89,299,602 13,941
 108 In Too Deep 89,167,201 13,805
@@ -122,7 +122,7 @@
 122 * Lace It (with Eminem & benny blanco) 79,232,635 122,402
 123 Going Through Changes 76,531,494 16,681
 124 Nowhere Fast (feat. Kehlani) 76,145,362 8,192
-125 Yah Yah (feat. Royce Da 5'9", Black Thought, … 75,284,680 13,941
+125 Yah Yah 75,284,680 13,941
 126 I'm Back 75,248,697 32,512
 127 Marshall Mathers 74,760,434 30,490
 128 Stepdad 74,250,639 10,483
@@ -138,7 +138,7 @@
 138 Zeus (feat. White Gold) 66,127,136 29,991
 139 Stronger Than I Was 64,834,933 8,949
 140 Rhyme Or Reason 64,658,477 10,135
-141 I Will (feat. KXNG Crooked, Royce Da 5'9" & J… 63,586,546 8,951
+141 I Will 63,586,546 8,951
 142 Em Calls Paul - Skit 63,502,372 3,443
 143 Brain Damage 63,445,213 23,499
 144 Drug Ballad 62,811,143 25,242
@@ -173,7 +173,7 @@
 173 Untitled 50,825,004 9,961
 174 Say What You Say 50,482,655 18,532
 175 Who Knew 50,423,628 21,681
-176 You’re Never Over 50,063,110 10,549
+176 You're Never Over 50,063,110 10,549
 177 * COFFIN (feat. Eminem) 49,870,735 13,075
 178 Wicked Ways 49,583,761 7,462
 179 Black Magic (feat. Skylar Grey) 48,868,482 11,971
@@ -197,7 +197,7 @@
 197 Same Song & Dance 40,358,395 10,990
 198 Need Me (feat. Pink) 40,344,812 4,987
 199 Framed 39,852,940 4,781
-200 Alfred’s Theme 39,440,948 11,107
+200 Alfred's Theme 39,440,948 11,107
 201 Offended 39,413,359 4,990
 202 Renaissance 38,370,687 370,513
 203 Fuel 37,300,565 518,264
@@ -251,7 +251,7 @@
 251 The King and I (feat. CeeLo Green) - From the… 24,056,912 9,121
 252 Music Box 23,152,123 6,303
 253 * Smack That - NBA Version 22,287,456 20,336
-254 Guilty Conscience 2 21,968,848 209,074
+254 Guilty Conscience II 21,968,848 209,074
 255 * USE THIS GOSPEL (feat. Kanye West & Emin… 21,261,551 13,867
 256 She Loves Me 20,853,114 4,765
 257 Temporary 20,783,598 196,395

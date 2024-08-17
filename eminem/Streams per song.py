@@ -1,70 +1,62 @@
-import pdfplumber
 import re
 
-# Step 1: Extract Data from PDF
-def extract_songs_from_pdf(pdf_path, albums):
-    # Updated pattern to match song names including those with features
-    pattern = re.compile(r'^\d+\s+(.*?)\s+(\d[\d,]*)\s+\d+')
-
+# Step 1: Extract Songs and Streams from TXT
+def extract_songs_from_txt(txt_path):
+    pattern = re.compile(r'^(\d+)\s+(.*?)\s+(\d[\d,]*)\s+\d+')  # Regex to match the format in the text file
     extracted_songs = []
-    found_songs = set()  # To keep track of songs that have already been found
-    matched_songs = []
-    unmatched_songs = []
 
-    song_list_started = False  # Flag to determine when the actual song list starts
-
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            text = page.extract_text()
-            if text:
-                lines = text.split("\n")
-                for line in lines:
-                    # Debugging: Print each line to see what is extracted
-                    print(f"{line}")  # This will output each line to the console
-                    
-                    # Skip lines until the actual song list starts
-                    if not song_list_started:
-                        if re.match(r'^\d+\s+', line):  # Detects the start of the song list by matching a line that starts with a number
-                            song_list_started = True
-
-                    if song_list_started:
-                        match = pattern.match(line)
-                        if match:
-                            song_name = match.group(1).strip()
-                            view_count = int(match.group(2).replace(",", ""))
-
-                            # Check if the song is in any of the albums and hasn't been found before
-                            song_matched = False
-                            clean_song_name = re.sub(r'\(feat.*?\)', '', song_name).strip().lower()
-                            
-                            for album, songs in albums.items():
-                                if clean_song_name in [song.lower() for song in songs] and clean_song_name not in found_songs:
-                                    extracted_songs.append((clean_song_name, view_count))
-                                    found_songs.add(clean_song_name)
-                                    matched_songs.append(clean_song_name)
-                                    song_matched = True
-                                    break  # Stop searching this song once found
-                            
-                            if not song_matched:
-                                unmatched_songs.append(song_name)
+    with open(txt_path, 'r') as file:
+        for line in file:
+            match = pattern.match(line)
+            if match:
+                song_name = match.group(2).strip()
+                stream_count = int(match.group(3).replace(",", ""))
+                extracted_songs.append((song_name, stream_count))
     
-    return extracted_songs, matched_songs, unmatched_songs
+    return extracted_songs
 
-# Step 2: Map Songs to Albums
+# Step 2: Map Songs to Albums and Calculate Streams
 def map_songs_to_albums(extracted_songs, albums):
-    album_views = {album: 0 for album in albums.keys()}
-    
-    for song_name, view_count in extracted_songs:
+    album_data = {album: {'total_streams': 0, 'song_count': 0, 'found_songs': 0, 'unfound_songs': []} for album in albums.keys()}
+    found_songs_set = set()  # To track songs that have already been matched
+
+    for song_name, stream_count in extracted_songs:
+        if song_name.lower() in found_songs_set:
+            continue  # Skip this song if it has already been matched
+
+        matched = False
         for album, songs in albums.items():
             if song_name.lower() in [song.lower() for song in songs]:
-                album_views[album] += view_count
+                album_data[album]['total_streams'] += stream_count
+                album_data[album]['song_count'] += 1
+                album_data[album]['found_songs'] += 1
+                found_songs_set.add(song_name.lower())  # Mark this song as found
+                matched = True
                 break
-    
-    return album_views
+        
+        # If the song didn't match any album, add it to the 'unfound_songs' list
+        if not matched:
+            for album, songs in albums.items():
+                for song in songs:
+                    if song_name.lower() == song.lower() and song_name.lower() not in [s.lower() for s in album_data[album]['unfound_songs']]:
+                        album_data[album]['unfound_songs'].append(song_name)
+                        break
 
-# Step 3: Rank Albums by Total Views
-def rank_albums(album_views):
-    return sorted(album_views.items(), key=lambda item: item[1], reverse=True)
+    # Check for any missing songs per album
+    for album, songs in albums.items():
+        for song in songs:
+            if song.lower() not in found_songs_set:
+                album_data[album]['unfound_songs'].append(song)
+    
+    return album_data
+
+# Step 3: Calculate Average Streams Per Song and Rank Albums
+def rank_albums_by_average_streams(album_data):
+    album_avg_streams = {
+        album: data['total_streams'] / data['song_count'] 
+        for album, data in album_data.items() if data['song_count'] > 0
+    }
+    return sorted(album_avg_streams.items(), key=lambda item: item[1], reverse=True)
 
 # Defining the albums and their songs
 albums = {
@@ -95,10 +87,10 @@ albums = {
         "Must Be The Ganja", "Deja Vu", "Beautiful", "Crack A Bottle", "Underground"
     ],
     "Recovery": [
-        "Cold Wind Blows", "Talkin’ 2 Myself", "On Fire", "Won't Back Down", "W.T.P.", 
+        "Cold Wind Blows", "Talkin' To Myself", "On Fire", "Won't Back Down", "W.T.P.", 
         "Going Through Changes", "Not Afraid", "Seduction", "No Love", "Space Bound", 
         "Cinderella Man", "25 To Life", "So Bad", "Almost Famous", "Love The Way You Lie", 
-        "You’re Never Over", "Untitled"
+        "You're Never Over", "Untitled"
     ],
     "The Marshall Mathers LP2": [
         "Bad Guy", "Rhyme Or Reason", "So Much Better", "Survival", "Legacy", 
@@ -106,7 +98,7 @@ albums = {
         "The Monster", "So Far...", "Love Game", "Headlights"
     ],
     "Revival": [
-        "Walk On Water (feat. Beyoncé)", "Believe", "Chloraseptic (feat. Phresher)", 
+        "Walk On Water", "Believe", "Chloraseptic (feat. Phresher)", 
         "Untouchable", "River (feat. Ed Sheeran)", "Remind Me", "Revival (Interlude)", 
         "Like Home (feat. Alicia Keys)", "Bad Husband (feat. X Ambassadors)", 
         "Tragic Endings (feat. Skylar Grey)", "Framed", "Nowhere Fast (feat. Kehlani)", 
@@ -119,14 +111,14 @@ albums = {
         "Venom - Music From The Motion Picture"
     ],
     "Music To Be Murdered By": [
-        "Unaccommodating (feat. Young M.A)", "You Gon’ Learn", 
+        "Unaccommodating (feat. Young M.A)", "You Gon' Learn", 
         "Those Kinda Nights (feat. Ed Sheeran)", "In Too Deep", "Godzilla (feat. Juice WRLD)", 
         "Darkness", "Leaving Heaven (feat. Skylar Grey)", "Yah Yah", "Stepdad", 
         "Marsh", "Never Love Again", "Little Engine", "Lock It Up (feat. Anderson .Paak)", 
         "Farewell", "No Regrets (feat. Don Toliver)", "I Will"
     ],
     "Music To Be Murdered By - Side B": [
-        "Black Magic (feat. Skylar Grey)", "Alfred’s Theme", "Tone Deaf", 
+        "Black Magic (feat. Skylar Grey)", "Alfred's Theme", "Tone Deaf", 
         "Book of Rhymes (feat. DJ Premier)", "Favorite Bitch (feat. Ty Dolla $ign)", 
         "Guns Blazing (feat. Dr. Dre & Sly Pyper)", "Gnat", "Higher", 
         "These Demons (feat. MAJ)", "She Loves Me", "Killer", "Zeus (feat. White Gold)", 
@@ -134,26 +126,29 @@ albums = {
     ],
     "The Death Of Slim Shady": [
         "Renaissance", "Habits", "Brand New Dance", "Evil", "Lucifer", 
-        "Antichrist", "Fuel", "Road Rage", "Houdini", "Guilty Conscience 2", 
+        "Antichrist", "Fuel", "Road Rage", "Houdini", "Guilty Conscience II", 
         "Head Honcho", "Temporary", "Bad One", "Tobey (feat. Big Sean and BabyTron)", 
         "Somebody Save Me"
     ]
 }
-# Path to the PDF file 
-pdf_path = 'eminem/spotify_songs.pdf'
 
-# Extract songs and views from the PDF
-extracted_songs, matched_songs, unmatched_songs = extract_songs_from_pdf(pdf_path, albums)
+# Path to the TXT file 
+txt_path = 'eminem/streams.txt'
 
-# Debugging: Print the unmatched songs
-print("Unmatched songs:", unmatched_songs)
+# Extract songs and streams from the TXT file
+extracted_songs = extract_songs_from_txt(txt_path)
 
-# Map extracted songs to albums and calculate the total views per album
-album_views = map_songs_to_albums(extracted_songs, albums)
+# Map extracted songs to albums and calculate the total streams per album
+album_data = map_songs_to_albums(extracted_songs, albums)
 
-# Rank the albums by total views
-ranked_albums = rank_albums(album_views)
+# Rank the albums by average streams per song
+ranked_albums = rank_albums_by_average_streams(album_data)
 
-# Output the ranked albums
-for album, views in ranked_albums:
-    print(f"{album}: {views} views")
+# Output the ranked albums by average streams per song
+for album, avg_streams in ranked_albums:
+    found_songs = album_data[album]['found_songs']
+    total_songs = len(albums[album])
+    unfound_songs = album_data[album]['unfound_songs']
+    print(f"{album}: {avg_streams:.2f} average streams per song ({found_songs}/{total_songs} songs found)")
+    if unfound_songs:
+        print(f"  Unfound songs: {', '.join(unfound_songs)}")
