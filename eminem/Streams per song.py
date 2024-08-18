@@ -17,44 +17,21 @@ def extract_songs_from_txt(txt_path):
 
 # Step 2: Map Songs to Albums and Calculate Streams
 def map_songs_to_albums(extracted_songs, albums):
-    album_data = {album: {'total_streams': 0, 'song_count': 0, 'found_songs': 0, 'unfound_songs': []} for album in albums.keys()}
-    found_songs_set = set()  # To track songs that have already been matched
+    album_data = {album: {'total_streams': 0} for album in albums.keys()}
 
     for song_name, stream_count in extracted_songs:
-        if song_name.lower() in found_songs_set:
-            continue  # Skip this song if it has already been matched
-
-        matched = False
         for album, songs in albums.items():
             if song_name.lower() in [song.lower() for song in songs]:
                 album_data[album]['total_streams'] += stream_count
-                album_data[album]['song_count'] += 1
-                album_data[album]['found_songs'] += 1
-                found_songs_set.add(song_name.lower())  # Mark this song as found
-                matched = True
                 break
-        
-        # If the song didn't match any album, add it to the 'unfound_songs' list
-        if not matched:
-            for album, songs in albums.items():
-                for song in songs:
-                    if song_name.lower() == song.lower() and song_name.lower() not in [s.lower() for s in album_data[album]['unfound_songs']]:
-                        album_data[album]['unfound_songs'].append(song_name)
-                        break
-
-    # Check for any missing songs per album
-    for album, songs in albums.items():
-        for song in songs:
-            if song.lower() not in found_songs_set:
-                album_data[album]['unfound_songs'].append(song)
     
     return album_data
 
 # Step 3: Calculate Average Streams Per Song and Rank Albums
-def rank_albums_by_average_streams(album_data):
+def rank_albums_by_average_streams(album_data, albums):
     album_avg_streams = {
-        album: data['total_streams'] / data['song_count'] 
-        for album, data in album_data.items() if data['song_count'] > 0
+        album: data['total_streams'] / len(albums[album])
+        for album, data in album_data.items()
     }
     return sorted(album_avg_streams.items(), key=lambda item: item[1], reverse=True)
 
@@ -142,13 +119,8 @@ extracted_songs = extract_songs_from_txt(txt_path)
 album_data = map_songs_to_albums(extracted_songs, albums)
 
 # Rank the albums by average streams per song
-ranked_albums = rank_albums_by_average_streams(album_data)
+ranked_albums = rank_albums_by_average_streams(album_data, albums)
 
 # Output the ranked albums by average streams per song
 for album, avg_streams in ranked_albums:
-    found_songs = album_data[album]['found_songs']
-    total_songs = len(albums[album])
-    unfound_songs = album_data[album]['unfound_songs']
-    print(f"{album}: {avg_streams:.2f} average streams per song ({found_songs}/{total_songs} songs found)")
-    if unfound_songs:
-        print(f"  Unfound songs: {', '.join(unfound_songs)}")
+    print(f"{album}: {int(avg_streams)} average streams per song")

@@ -15,21 +15,21 @@ def extract_songs_from_txt(txt_path):
     
     return extracted_songs
 
-# Step 2: Map Songs to Albums
+# Step 2: Map Songs to Albums and Calculate Total Streams
 def map_songs_to_albums(extracted_songs, albums):
-    album_views = {album: 0 for album in albums.keys()}
-    
+    album_data = {album: {'total_streams': 0} for album in albums.keys()}
+
     for song_name, stream_count in extracted_songs:
         for album, songs in albums.items():
             if song_name.lower() in [song.lower() for song in songs]:
-                album_views[album] += stream_count
+                album_data[album]['total_streams'] += stream_count
                 break
     
-    return album_views
+    return album_data
 
 # Step 3: Rank Albums by Total Streams
-def rank_albums(album_views):
-    return sorted(album_views.items(), key=lambda item: item[1], reverse=True)
+def rank_albums_by_total_streams(album_data):
+    return sorted(album_data.items(), key=lambda item: item[1]['total_streams'], reverse=True)
 
 # Defining the albums and their songs
 albums = {
@@ -112,11 +112,11 @@ txt_path = 'eminem/streams.txt'
 extracted_songs = extract_songs_from_txt(txt_path)
 
 # Map extracted songs to albums and calculate the total streams per album
-album_views = map_songs_to_albums(extracted_songs, albums)
+album_data = map_songs_to_albums(extracted_songs, albums)
 
 # Rank the albums by total streams
-ranked_albums = rank_albums(album_views)
+ranked_albums = rank_albums_by_total_streams(album_data)
 
-# Output the ranked albums
-for album, streams in ranked_albums:
-    print(f"{album}: {streams} streams")
+# Output the ranked albums by total streams
+for album, data in ranked_albums:
+    print(f"{album}: {data['total_streams']} streams")
