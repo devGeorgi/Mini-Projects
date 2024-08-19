@@ -110,7 +110,7 @@ albums = {
 }
 
 # Path to the TXT file 
-txt_path = 'eminem/streams.txt'
+txt_path = 'Ranking Eminem Songs/spotify_songs.txt'
 
 # Extract songs and streams from the TXT file
 extracted_songs = extract_songs_from_txt(txt_path)

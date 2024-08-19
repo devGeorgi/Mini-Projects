@@ -22,10 +22,10 @@ def pdf_to_text(pdf_path, txt_path, skip_lines=11):
                         if line_counter > skip_lines:  # Start writing when the songs start
                             text_file.write(line + "\n")
 
-    print(f"PDF text has been written to {txt_path}")
+    print(f"txt file ready")
 
-# Example usage
-pdf_path = 'eminem/spotify_songs.pdf'  # Path to your PDF file
-txt_path = 'eminem/output.txt'   # Path to the output text file
+# 
+pdf_path = 'Ranking Eminem Songs/spotify_songs.pdf'  # Path to the PDF file
+txt_path = 'Ranking Eminem Songs/spotify_songs.txt'   # Path to the txt file
 
 pdf_to_text(pdf_path, txt_path)

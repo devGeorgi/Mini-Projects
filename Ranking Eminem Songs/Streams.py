@@ -1,6 +1,6 @@
 import re
 
-# Step 1: Extract Songs and Streams from TXT
+# Extracting songs and streams from txt
 def extract_songs_from_txt(txt_path):
     pattern = re.compile(r'^(\d+)\s+(.*?)\s+(\d[\d,]*)\s+\d+')  # Regex to match the format in the text file
     extracted_songs = []
@@ -15,7 +15,7 @@ def extract_songs_from_txt(txt_path):
     
     return extracted_songs
 
-# Step 2: Map Songs to Albums and Calculate Total Streams
+# Map songs to albums and calculate total streams
 def map_songs_to_albums(extracted_songs, albums):
     album_data = {album: {'total_streams': 0} for album in albums.keys()}
 
@@ -27,7 +27,7 @@ def map_songs_to_albums(extracted_songs, albums):
     
     return album_data
 
-# Step 3: Rank Albums by Total Streams
+# Rank albums by total streams
 def rank_albums_by_total_streams(album_data):
     return sorted(album_data.items(), key=lambda item: item[1]['total_streams'], reverse=True)
 
@@ -105,10 +105,10 @@ albums = {
     ]
 }
 
-# Path to the TXT file 
-txt_path = 'eminem/streams.txt'
+# Path to the txt file 
+txt_path = 'Ranking Eminem Songs/spotify_songs.txt'
 
-# Extract songs and streams from the TXT file
+# Extract songs and streams from the txt file
 extracted_songs = extract_songs_from_txt(txt_path)
 
 # Map extracted songs to albums and calculate the total streams per album
