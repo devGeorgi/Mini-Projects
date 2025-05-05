@@ -10,28 +10,58 @@ def extract_songs_from_txt(txt_path):
             match = pattern.match(line)
             if match:
                 song_name = match.group(2).strip()
+                # Remove features and anything in parentheses for better matching
+                clean_song_name = re.sub(r'\(feat\..*?\)', '', song_name).strip()
+                clean_song_name = re.sub(r'\(with.*?\)', '', clean_song_name).strip()
+                clean_song_name = re.sub(r'\(.*?\)', '', clean_song_name).strip()
+                
                 stream_count = int(match.group(3).replace(",", ""))
-                extracted_songs.append((song_name, stream_count))
+                extracted_songs.append((song_name, clean_song_name, stream_count))
     
     return extracted_songs
 
 # Map songs to albums and calculate total streams
 def map_songs_to_albums(extracted_songs, albums):
-    album_data = {album: {'total_streams': 0} for album in albums.keys()}
+    album_data = {album: {'total_streams': 0, 'matched_songs': []} for album in albums.keys()}
+    unmatched_songs = []
 
-    for song_name, stream_count in extracted_songs:
+    for song_name, clean_song_name, stream_count in extracted_songs:
+        matched = False
         for album, songs in albums.items():
-            if song_name.lower() in [song.lower() for song in songs]:
+            # Clean up album song names too for better matching
+            clean_album_songs = [re.sub(r'\(feat\..*?\)', '', s).strip() for s in songs]
+            clean_album_songs = [re.sub(r'\(with.*?\)', '', s).strip() for s in clean_album_songs]
+            clean_album_songs = [re.sub(r'\(.*?\)', '', s).strip() for s in clean_album_songs]
+            
+            # Check if the current song is in this album (case insensitive)
+            if any(clean_song_name.lower() == album_song.lower() for album_song in clean_album_songs):
                 album_data[album]['total_streams'] += stream_count
+                album_data[album]['matched_songs'].append((song_name, stream_count))
+                matched = True
                 break
+        
+        if not matched:
+            unmatched_songs.append((song_name, stream_count))
     
-    return album_data
+    return album_data, unmatched_songs
 
-# Rank albums by total streams
-def rank_albums_by_total_streams(album_data):
-    return sorted(album_data.items(), key=lambda item: item[1]['total_streams'], reverse=True)
+# Calculate average streams per song and rank albums
+def rank_albums_by_average_streams(album_data, albums):
+    album_avg_streams = {}
+    for album, data in album_data.items():
+        num_songs_in_album = len(albums[album])
+        num_matched_songs = len(data['matched_songs'])
+        
+        if num_matched_songs > 0:  # Only calculate average if some songs were matched
+            album_avg_streams[album] = data['total_streams'] / num_songs_in_album
+            print(f"Matched {num_matched_songs}/{num_songs_in_album} songs for {album}")
+        else:
+            album_avg_streams[album] = 0
+            print(f"No songs matched for {album}")
+    
+    return sorted(album_avg_streams.items(), key=lambda item: item[1], reverse=True)
 
-# Defining the albums and their songs
+# Define the albums and their songs
 albums = {
     "The Slim Shady LP": [
         "My Name Is", "Guilty Conscience", "Brain Damage", "If I Had", "'97 Bonnie & Clyde", 
@@ -105,18 +135,40 @@ albums = {
     ]
 }
 
-# Path to the txt file 
-txt_path = 'Ranking Eminem Songs/spotify_songs.txt'
-
-# Extract songs and streams from the txt file
-extracted_songs = extract_songs_from_txt(txt_path)
-
-# Map extracted songs to albums and calculate the total streams per album
-album_data = map_songs_to_albums(extracted_songs, albums)
-
-# Rank the albums by total streams
-ranked_albums = rank_albums_by_total_streams(album_data)
-
-# Output the ranked albums by total streams
-for album, data in ranked_albums:
-    print(f"{album}: {data['total_streams']} streams")
+if __name__ == "__main__":
+    # Path to the TXT file
+    txt_path = 'C:\Github\Mini-Projects\Ranking Eminem Songs\spotify_songs.txt'
+    
+    # Extract songs and streams from the TXT file
+    extracted_songs = extract_songs_from_txt(txt_path)
+    print(f"Extracted {len(extracted_songs)} songs from the TXT file")
+    
+    # Map extracted songs to albums and calculate the total streams per album
+    album_data, unmatched_songs = map_songs_to_albums(extracted_songs, albums)
+    
+    # Print some debug information
+    print(f"\nTotal unmatched songs: {len(unmatched_songs)}")
+    if len(unmatched_songs) > 0:
+        print("First 10 unmatched songs:")
+        for i, (song, streams) in enumerate(unmatched_songs[:10]):
+            print(f"  {song}: {streams:,} streams")
+    
+    # Rank the albums by average streams per song
+    ranked_albums = rank_albums_by_average_streams(album_data, albums)
+    
+    # Output the ranked albums by average streams per song
+    print("\nAlbums ranked by average streams per song:")
+    for album, avg_streams in ranked_albums:
+        print(f"{album}: {int(avg_streams):,} average streams per song")
+        
+    # Also output the total streams per album
+    print("\nTotal streams per album:")
+    sorted_by_total = sorted(album_data.items(), key=lambda x: x[1]['total_streams'], reverse=True)
+    for album, data in sorted_by_total:
+        print(f"{album}: {data['total_streams']:,} total streams")
+        
+        # Print songs matched for debugging
+        if len(data['matched_songs']) > 0:
+            print("  Matched songs:")
+            for song, streams in data['matched_songs']:
+                print(f"    {song}: {streams:,} streams")
