@@ -3,6 +3,7 @@
 import re
 import os # Import os for file check
 import collections # Import collections for Counter
+import difflib # Import difflib for fuzzy matching
 
 # --- Function Definitions ---
 
@@ -58,10 +59,12 @@ def extract_songs_from_txt(txt_path):
                     clean_song_name = re.sub(r'\s-\sPt\.\s*\d+$', '', clean_song_name, flags=re.IGNORECASE).strip() # Handle - Pt. X
                     # Remove trailing parens generally (e.g., (Live), (Demo))
                     clean_song_name = re.sub(r'\s\([^)]*\)$', '', clean_song_name).strip()
-                    # Remove specific known parenthetical additions if needed (example)
-                    # clean_song_name = re.sub(r'\s\(Radio Version\)$', '', clean_song_name, flags=re.IGNORECASE).strip()
-                    # Normalize apostrophes last
-                    clean_song_name = clean_song_name.replace("’", "'")
+                    # Normalize all apostrophes to standard '
+                    clean_song_name = clean_song_name.replace("’", "'").replace("‘", "'")
+                    # Remove any parenthesis at the end, even if incomplete or with ellipsis
+                    clean_song_name = re.sub(r'\([^)]*\)?$', '', clean_song_name).strip()
+                    # Remove any trailing ellipsis
+                    clean_song_name = re.sub(r'…$', '', clean_song_name).strip()
                     # --- End Cleaning ---
 
                     try:
@@ -97,6 +100,10 @@ def apply_cleaning_to_defined_songs(song_list):
         album_song_clean = re.sub(r'\s-\sPt\.\s*\d+$', '', album_song_clean, flags=re.IGNORECASE).strip()
         album_song_clean = re.sub(r'\s\([^)]*\)$', '', album_song_clean).strip()
         album_song_clean = album_song_clean.replace("’", "'") # Normalize apostrophes
+        # Remove any parenthesis at the end, even if incomplete or with ellipsis
+        album_song_clean = re.sub(r'\([^)]*\)?$', '', album_song_clean).strip()
+        # Remove any trailing ellipsis
+        album_song_clean = re.sub(r'…$', '', album_song_clean).strip()
         cleaned_set.add(album_song_clean.lower()) # Store cleaned and lowercased
     return cleaned_set
 
@@ -105,11 +112,11 @@ def map_songs_to_albums(extracted_songs, defined_albums):
     """
     Maps extracted songs to defined albums using cleaned names.
     Calculates total streams and identifies matched/unmatched songs.
+    Now connects each defined song to the first closest match if no exact match is found.
     """
     album_data = {album: {'total_streams': 0, 'matched_songs': []} for album in defined_albums.keys()}
     unmatched_songs = []
-    song_match_details = [] # For debugging match process
-    processed_original_spotify_names = set() # Avoid processing same spotify line twice
+    processed_cleaned_spotify_names = set() # Avoid processing same cleaned name twice
 
     # --- Pre-clean defined album song names once ---
     cleaned_defined_albums = {}
@@ -117,44 +124,36 @@ def map_songs_to_albums(extracted_songs, defined_albums):
         cleaned_defined_albums[album] = apply_cleaning_to_defined_songs(songs)
     # --- End Pre-cleaning ---
 
-    print(f"Attempting to map {len(extracted_songs)} extracted songs...")
-    match_count = 0
-
-    # Iterate through songs extracted from the TXT file
+    # Build a dict of cleaned extracted songs for fuzzy matching
+    cleaned_extracted_dict = {}
     for original_spotify_name, cleaned_spotify_name, stream_count in extracted_songs:
+        cleaned_name = cleaned_spotify_name.lower()
+        if cleaned_name not in cleaned_extracted_dict:
+            cleaned_extracted_dict[cleaned_name] = (original_spotify_name, stream_count)
 
-        # Skip if this exact original spotify name string has already been matched to an album
-        if original_spotify_name in processed_original_spotify_names:
-            # song_match_details.append(f"DEBUG: SKIP (already processed original name): '{original_spotify_name}'")
-            continue
-
-        matched_to_album = False
-        cleaned_spotify_name_lower = cleaned_spotify_name.lower() # Normalize for matching
-
-        # Check against each album's cleaned song list
-        for album, cleaned_defined_songs_set in cleaned_defined_albums.items():
-            if cleaned_spotify_name_lower in cleaned_defined_songs_set:
+    for album, cleaned_defined_songs_set in cleaned_defined_albums.items():
+        for defined_song in cleaned_defined_songs_set:
+            # Exact match first
+            if defined_song in cleaned_extracted_dict and defined_song not in processed_cleaned_spotify_names:
+                original_spotify_name, stream_count = cleaned_extracted_dict[defined_song]
                 album_data[album]['total_streams'] += stream_count
-                # Store original name and streams for potential later inspection
                 album_data[album]['matched_songs'].append((original_spotify_name, stream_count))
-                # song_match_details.append(f"MATCH: '{cleaned_spotify_name_lower}' (from '{original_spotify_name}') -> Album '{album}'")
-                processed_original_spotify_names.add(original_spotify_name) # Mark as processed
-                matched_to_album = True
-                match_count += 1
-                break # IMPORTANT: Assign song to the first album it matches
-
-        if not matched_to_album:
-            # Add to unmatched list only if it wasn't processed/matched at all
-            unmatched_songs.append((original_spotify_name, cleaned_spotify_name, stream_count))
-            # song_match_details.append(f"NO MATCH: '{cleaned_spotify_name_lower}' (from '{original_spotify_name}')")
-
-    # Print some matching details for debugging (optional)
-    # print("\n--- Song Matching Details ---")
-    # for detail in song_match_details:
-    #      print(detail)
-    # print("--- End Matching Details ---")
-
-    print(f"Successfully matched {match_count} songs to albums.")
+                processed_cleaned_spotify_names.add(defined_song)
+            else:
+                # Always connect to the first closest match if available
+                close_matches = difflib.get_close_matches(defined_song, cleaned_extracted_dict.keys(), n=1, cutoff=0.6)
+                if close_matches:
+                    match_name = close_matches[0]
+                    if match_name not in processed_cleaned_spotify_names:
+                        original_spotify_name, stream_count = cleaned_extracted_dict[match_name]
+                        album_data[album]['total_streams'] += stream_count
+                        album_data[album]['matched_songs'].append((original_spotify_name, stream_count))
+                        processed_cleaned_spotify_names.add(match_name)
+                    else:
+                        unmatched_songs.append((defined_song, '', 0))
+                else:
+                    unmatched_songs.append((defined_song, '', 0))
+    print(f"Successfully matched {sum(len(d['matched_songs']) for d in album_data.values())} songs to albums (including fuzzy matches).")
     return album_data, unmatched_songs
 
 
@@ -254,8 +253,20 @@ def identify_doubled_and_missing_songs(album_data, defined_albums):
                 'missing': sorted(list(missing_from_match))   # Show original defined names that were missing
             }
             # Debug Print
-            # print(f"Debug '{album}': DefinedClean={len(defined_cleaned_set)}, MatchedClean={len(matched_cleaned_set)}, MissingClean={len(missing_cleaned_names)}, DoubledClean={len(doubled_cleaned_names)}")
+            # print(f"Debug '{album}': DefinedCleaned={len(defined_cleaned_set)}, MatchedCleaned={len(matched_cleaned_set)}, MissingClean={len(missing_cleaned_names)}, DoubledClean={len(doubled_cleaned_names)}")
             # print(f"Debug '{album}': MissingOrig={len(missing_from_match)}, DoubledOrig={len(doubled_in_match)}")
+
+    # DEBUG: Print unmatched defined songs for Recovery
+    if album == "Recovery":
+        print("\n[DEBUG] Recovery defined songs (cleaned):")
+        for s in sorted(cleaned_defined_set):
+            print(f"  {s}")
+        print("[DEBUG] Recovery matched cleaned songs:")
+        for s in sorted(matched_cleaned_set):
+            print(f"  {s}")
+        print("[DEBUG] Recovery missing (defined but not matched):")
+        for s in sorted(cleaned_defined_set - matched_cleaned_set):
+            print(f"  {s}")
 
     return album_song_issues
 
@@ -376,18 +387,73 @@ else:
     # Sort by total streams found for the album
     sorted_by_total = sorted(album_data.items(), key=lambda x: x[1]['total_streams'], reverse=True)
     for i, (album, data) in enumerate(sorted_by_total, 1):
-        # Only print albums that had streams matched
         if data['total_streams'] > 0:
-            num_matched = len(data['matched_songs'])
-            num_defined = len(defined_albums.get(album, []))
-            print(f"{i}. {album}: {data['total_streams']:,} total streams (Matched {num_matched}/{num_defined} songs)")
-            # Optional: Print matched songs per album (can be very long)
-            # if num_matched > 0:
-            #     print("    Matched songs:")
-            #     for song, streams in sorted(data['matched_songs'], key=lambda x: x[1], reverse=True)[:5]: # Show top 5 matched
-            #         print(f"      - {song}: {streams:,} streams")
-            #     if num_matched > 5: print("      ...")
+            # Count unique defined songs that were matched (by cleaned name)
+            cleaned_defined_set = apply_cleaning_to_defined_songs(defined_albums.get(album, []))
+            # Build set of cleaned matched names for this album
+            matched_cleaned_set = set()
+            for orig_name, _ in data['matched_songs']:
+                temp_cleaned = orig_name
+                temp_cleaned = re.sub(r'\(feat\.[^)]+\)', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\(with\s[^)]+\)', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\s-\sMusic From.*$', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\s-\sFrom.*$', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\s-\s.*Remix.*$', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\s-\s.*Version.*$', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\s-\s.*Edit.*$', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\s-\sPt\.\s*\d+$', '', temp_cleaned, flags=re.IGNORECASE).strip()
+                temp_cleaned = re.sub(r'\s\([^)]*\)?$', '', temp_cleaned).strip()
+                temp_cleaned = temp_cleaned.replace("’", "'").replace("‘", "'")
+                temp_cleaned = re.sub(r'…$', '', temp_cleaned).strip()
+                matched_cleaned_set.add(temp_cleaned.lower())
+            # Only count defined songs that were actually matched (by cleaned name)
+            num_matched = len(cleaned_defined_set & matched_cleaned_set)
+            num_defined = len(cleaned_defined_set)
+            print(f"{i}. {album}: {data['total_streams']:,} total streams (Matched {num_matched}/{num_defined} unique songs)")
     print("-" * 20)
+
+    # 6. Print a clear summary of songs in each album that were NOT found in the PDF
+    print("\n--- Songs Defined in Script but NOT Found in PDF (per Album) ---")
+    for album, issues in sorted(album_song_issues.items()):
+        if issues['missing']:
+            print(f"\n{album}:")
+            for song in issues['missing']:
+                print(f"  - {song}")
+    print("--- End of Missing Songs Summary ---\n")
+
+    # 7. Debug: For each missing song, print its cleaned version and closest matches from the extracted songs
+    print("\n--- DEBUG: Closest Extracted Songs for Each Missing Song ---")
+    # Build a set of all cleaned extracted song names
+    cleaned_extracted_set = set()
+    for _, clean_name, _ in extracted_songs:
+        cleaned_extracted_set.add(clean_name.lower())
+    
+    for album, issues in sorted(album_song_issues.items()):
+        if issues['missing']:
+            print(f"\n{album}:")
+            for song in issues['missing']:
+                # Clean the missing song name using the same logic
+                cleaned_missing = song
+                cleaned_missing = re.sub(r'\(feat\.[^)]+\)', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\(with\s[^)]+\)', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\s-\sMusic From.*$', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\s-\sFrom.*$', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\s-\s.*Remix.*$', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\s-\s.*Version.*$', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\s-\s.*Edit.*$', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\s-\sPt\.\s*\d+$', '', cleaned_missing, flags=re.IGNORECASE).strip()
+                cleaned_missing = re.sub(r'\s\([^)]*\)$', '', cleaned_missing).strip()
+                cleaned_missing = cleaned_missing.replace("’", "'").replace("‘", "'")
+                cleaned_missing = re.sub(r'…$', '', cleaned_missing).strip()
+                cleaned_missing = cleaned_missing.lower()
+                print(f"  - {song} (cleaned: '{cleaned_missing}')")
+                # Find close matches
+                close_matches = difflib.get_close_matches(cleaned_missing, cleaned_extracted_set, n=3, cutoff=0.6)
+                if close_matches:
+                    print(f"    Closest in extracted: {close_matches}")
+                else:
+                    print(f"    No close match found in extracted songs.")
+    print("--- End of Debug ---\n")
 
 print("\nMain Script Finished.")
 
