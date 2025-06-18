@@ -1,0 +1,403 @@
+1. Name: Lose Yourself, Streams: 2,272,446,202, Daily: 1,082,964
+2. Name: Without Me, Streams: 2,258,849,193, Daily: 1,494,396
+3. Name: Till I Collapse, Streams: 2,019,817,157, Daily: 847,813
+4. Name: The Real Slim Shady, Streams: 1,880,441,771, Daily: 1,097,747
+5. Name: Mockingbird, Streams: 1,772,456,239, Daily: 1,253,542
+6. Name: Love The Way You Lie, Streams: 1,601,965,303, Daily: 1,006,924
+7. Name: Godzilla (feat. Juice WRLD), Streams: 1,510,026,368, Daily: 712,529
+8. Name: Stan, Streams: 1,160,933,081, Daily: 514,086
+9. Name: *Smack That, Streams: 1,098,289,068, Daily: 1,109,987
+10. Name: Rap God, Streams: 1,098,107,642, Daily: 279,763
+11. Name: The Monster, Streams: 1,062,028,587, Daily: 468,486
+12. Name: Not Afraid, Streams: 1,045,368,920, Daily: 457,113
+13. Name: Superman, Streams: 963,474,313, Daily: 645,174
+14. Name: *Forgot About Dre, Streams: 843,692,157, Daily: 366,094
+15. Name: River (feat. Ed Sheeran), Streams: 843,036,350, Daily: 180,976
+16. Name: Venom - Music From The Motion Picture, Streams: 809,240,105, Daily: 276,561
+17. Name: Lucky You (feat. Joyner Lucas), Streams: 721,589,500, Daily: 168,641
+18. Name: My Name Is, Streams: 619,847,932, Daily: 269,665
+19. Name: *Forever, Streams: 608,859,816, Daily: 275,364
+20. Name: Sing For The Moment, Streams: 542,083,851, Daily: 272,742
+21. Name: Shake That, Streams: 535,300,265, Daily: 270,333
+22. Name: *Homicide, Streams: 534,536,464, Daily: 106,069
+23. Name: When I'm Gone, Streams: 507,407,012, Daily: 125,880
+24. Name: *What's The Difference, Streams: 444,675,947, Daily: 279,023
+25. Name: Killshot, Streams: 426,433,119, Daily: 128,309
+26. Name: The Way I Am, Streams: 423,569,690, Daily: 204,539
+27. Name: Cleanin' Out My Closet, Streams: 421,371,709, Daily: 199,344
+28. Name: Houdini, Streams: 357,485,029, Daily: 2,160,478
+29. Name: Beautiful, Streams: 351,789,803, Daily: 104,575
+30. Name: *I Need A Doctor, Streams: 345,377,734, Daily: 94,947
+31. Name: No Love, Streams: 339,892,985, Daily: 128,006
+32. Name: Like Toy Soldiers, Streams: 329,928,317, Daily: 86,429
+33. Name: The Ringer, Streams: 326,627,208, Daily: 42,160
+34. Name: Cinderella Man, Streams: 321,974,174, Daily: 110,048
+35. Name: Space Bound, Streams: 318,508,975, Daily: 84,822
+36. Name: Berzerk, Streams: 311,353,703, Daily: 60,836
+37. Name: Crack A Bottle, Streams: 296,746,329, Daily: 129,120
+38. Name: Just Lose It, Streams: 275,676,597, Daily: 161,908
+39. Name: Bitch Please II, Streams: 263,517,538, Daily: 182,081
+40. Name: Kill You, Streams: 263,353,950, Daily: 123,816
+41. Name: *Love The Way You Lie (Part II) - Pt. 2, Streams: 262,322,026, Daily: 87,592
+42. Name: Fall, Streams: 262,021,659, Daily: 41,290
+43. Name: Survival, Streams: 260,941,861, Daily: 43,435
+44. Name: *Drop The World, Streams: 250,363,372, Daily: 76,864
+45. Name: *Remember The Name (feat. Eminem & 50 Cent), Streams: 241,320,026, Daily: 84,577
+46. Name: Ass Like That, Streams: 238,963,491, Daily: 99,598
+47. Name: *Patiently Waiting, Streams: 230,649,265, Daily: 100,129
+48. Name: Not Alike (feat. Royce Da 5'9), Streams: 227,226,552, Daily: 34,207
+49. Name: You Don't Know, Streams: 225,653,458, Daily: 83,805
+50. Name: *That's All She Wrote, Streams: 212,480,234, Daily: 44,425
+51. Name: Kamikaze, Streams: 207,135,750, Daily: 27,829
+52. Name: Greatest, Streams: 204,927,301, Daily: 21,922
+53. Name: Business, Streams: 197,532,988, Daily: 172,649
+54. Name: *Last One Standing (feat. Polo G, Mozzy & Eminem) - From Venom: Let There Be Carnage, Streams: 190,423,666, Daily: 70,476
+55. Name: Guilty Conscience, Streams: 185,289,499, Daily: 68,183
+56. Name: Walk On Water (feat. Beyoncé), Streams: 178,262,610, Daily: 13,323
+57. Name: White America, Streams: 174,395,267, Daily: 52,172
+58. Name: Those Kinda Nights (feat. Ed Sheeran), Streams: 167,935,191, Daily: 34,776
+59. Name: Role Model, Streams: 162,693,459, Daily: 109,222
+60. Name: Headlights, Streams: 156,137,514, Daily: 27,816
+61. Name: Never Enough, Streams: 155,806,915, Daily: 193,883
+62. Name: You Gon’ Learn (feat. Royce Da 5'9" & White Gold), Streams: 155,425,666, Daily: 27,278
+63. Name: Legacy, Streams: 153,683,494, Daily: 21,315
+64. Name: 25 To Life, Streams: 150,761,565, Daily: 29,295
+65. Name: Kings Never Die (feat. Gwen Stefani), Streams: 149,890,432, Daily: 35,366
+66. Name: We Made You, Streams: 148,718,228, Daily: 52,533
+67. Name: Higher, Streams: 148,155,339, Daily: 69,650
+68. Name: Beautiful Pain, Streams: 146,690,764, Daily: 33,471
+69. Name: *The Watcher, Streams: 146,410,273, Daily: 127,452
+70. Name: *Renegade, Streams: 141,152,896, Daily: 51,695
+71. Name: Hailie's Song, Streams: 137,962,423, Daily: 55,780
+72. Name: *Airplanes, Pt. II (feat. Eminem & Hayley Williams of Paramore), Streams: 137,247,565, Daily: 40,709
+73. Name: Darkness, Streams: 136,168,842, Daily: 23,283
+74. Name: Unaccommodating (feat. Young M.A), Streams: 133,270,370, Daily: 20,922
+75. Name: Guts Over Fear, Streams: 132,835,721, Daily: 19,166
+76. Name: Good Guy (feat. Jessie Reyez), Streams: 132,096,747, Daily: 18,437
+77. Name: Gnat, Streams: 131,001,675, Daily: 32,603
+78. Name: *No Favors, Streams: 123,450,998, Daily: 8,551
+79. Name: Under The Influence, Streams: 122,631,334, Daily: 57,442
+80. Name: Stepping Stone, Streams: 121,155,028, Daily: 11,335
+81. Name: Normal, Streams: 120,181,865, Daily: 10,751
+82. Name: Killer (feat. Jack Harlow & Cordae) - Remix, Streams: 119,593,179, Daily: 54,893
+83. Name: Soldier, Streams: 118,495,326, Daily: 69,042
+84. Name: Bad Guy, Streams: 116,298,469, Daily: 15,733
+85. Name: *Best Friend, Streams: 113,274,404, Daily: 30,408
+86. Name: *The Adventures of Moon Man & Slim Shady (with Eminem), Streams: 111,546,660, Daily: 17,044
+87. Name: Go To Sleep, Streams: 110,260,394, Daily: 56,409
+88. Name: Never Love Again, Streams: 109,844,658, Daily: 31,498
+89. Name: Cold Wind Blows, Streams: 108,892,837, Daily: 25,332
+90. Name: Won't Back Down, Streams: 108,863,754, Daily: 27,553
+91. Name: Leaving Heaven (feat. Skylar Grey), Streams: 108,473,807, Daily: 21,112
+92. Name: Just Don't Give A Fuck, Streams: 108,109,821, Daily: 35,827
+93. Name: Lock It Up (feat. Anderson .Paak), Streams: 107,850,925, Daily: 27,846
+94. Name: W.T.P., Streams: 106,871,161, Daily: 31,915
+95. Name: From The D 2 The LBC (with Snoop Dogg), Streams: 106,852,560, Daily: 48,019
+96. Name: Believe, Streams: 104,862,417, Daily: 8,538
+97. Name: FACK, Streams: 104,462,300, Daily: 34,172
+98. Name: Phenomenal, Streams: 102,284,362, Daily: 22,099
+99. Name: *Majesty (with Labrinth & feat. Eminem), Streams: 101,983,369, Daily: 17,013
+100. Name: *Dead Wrong, Streams: 95,120,567, Daily: 28,953
+101. Name: No Regrets (feat. Don Toliver), Streams: 93,652,938, Daily: 19,876
+102. Name: Criminal, Streams: 93,265,440, Daily: 39,331
+103. Name: *Gospel (with Eminem), Streams: 92,232,627, Daily: 77,859
+104. Name: *The Hills - Remix, Streams: 91,585,296, Daily: 23,765
+105. Name: Talkin’ 2 Myself, Streams: 91,115,756, Daily: 16,794
+106. Name: Nice Guy (with Jessie Reyez), Streams: 89,792,692, Daily: 7,561
+107. Name: In Your Head, Streams: 89,433,120, Daily: 13,880
+108. Name: In Too Deep, Streams: 89,299,694, Daily: 13,834
+109. Name: *Lean Back (feat. Lil Jon, Eminem, Mase & Remy Martin) - Remix, Streams: 89,197,820, Daily: 30,248
+110. Name: My Dad's Gone Crazy, Streams: 89,191,896, Daily: 41,891
+111. Name: Big Weenie, Streams: 88,821,952, Daily: 43,538
+112. Name: *My Name (feat. Eminem & Nate Dogg), Streams: 87,603,415, Daily: 27,916
+113. Name: My Mom, Streams: 87,031,622, Daily: 30,734
+114. Name: *Revenge (feat. Eminem), Streams: 83,402,296, Daily: 13,909
+115. Name: When The Music Stops, Streams: 82,257,565, Daily: 34,193
+116. Name: Premonition - Intro, Streams: 82,099,544, Daily: 9,364
+117. Name: Remind Me, Streams: 82,031,254, Daily: 7,676
+118. Name: So Bad, Streams: 81,231,688, Daily: 19,082
+119. Name: Marsh, Streams: 80,927,574, Daily: 10,934
+120. Name: *Lace It (with Eminem & benny blanco), Streams: 80,378,846, Daily: 119,925
+121. Name: Farewell, Streams: 79,927,237, Daily: 13,462
+122. Name: Square Dance, Streams: 79,774,216, Daily: 36,100
+123. Name: Going Through Changes, Streams: 76,697,172, Daily: 17,607
+124. Name: Nowhere Fast (feat. Kehlani), Streams: 76,224,532, Daily: 8,173
+125. Name: I'm Back, Streams: 75,565,929, Daily: 33,214
+126. Name: Yah Yah (feat. Royce Da 5'9", Black Thought, Q-Tip & Denaun), Streams: 75,423,741, Daily: 14,916
+127. Name: Marshall Mathers, Streams: 75,052,218, Daily: 30,703
+128. Name: Stepdad, Streams: 74,349,809, Daily: 10,540
+129. Name: Bad Husband (feat. X Ambassadors), Streams: 73,811,924, Daily: 6,805
+130. Name: Love Game, Streams: 72,973,248, Daily: 16,950
+131. Name: Tragic Endings (feat. Skylar Grey), Streams: 72,118,229, Daily: 7,773
+132. Name: 8 Mile, Streams: 70,799,036, Daily: 39,399
+133. Name: One Shot 2 Shot, Streams: 69,396,254, Daily: 25,614
+134. Name: *Roman's Revenge, Streams: 68,700,153, Daily: 24,362
+135. Name: Little Engine, Streams: 67,782,607, Daily: 8,848
+136. Name: Tobey (feat. Big Sean and BabyTron), Streams: 67,341,972, Daily: 529,799
+137. Name: Rock Bottom, Streams: 67,154,801, Daily: 25,784
+138. Name: *Welcome 2 Detroit, Streams: 66,958,844, Daily: 26,647
+139. Name: Zeus (feat. White Gold), Streams: 66,431,501, Daily: 31,711
+140. Name: Stronger Than I Was, Streams: 64,920,161, Daily: 8,971
+141. Name: Rhyme Or Reason, Streams: 64,756,142, Daily: 10,192
+142. Name: Brain Damage, Streams: 63,677,374, Daily: 23,758
+143. Name: I Will (feat. KXNG Crooked, Royce Da 5'9" & Joell Ortiz), Streams: 63,674,387, Daily: 9,288
+144. Name: Em Calls Paul - Skit, Streams: 63,534,897, Daily: 3,464
+145. Name: Drug Ballad, Streams: 63,064,839, Daily: 25,323
+146. Name: Is This Love ('09) (feat. 50 Cent), Streams: 61,812,525, Daily: 21,961
+147. Name: Say Goodbye Hollywood, Streams: 61,201,975, Daily: 21,335
+148. Name: Castle, Streams: 59,766,977, Daily: 6,387
+149. Name: *Rainy Days (feat. Eminem), Streams: 59,717,731, Daily: 13,116
+150. Name: Asshole, Streams: 59,368,009, Daily: 8,119
+151. Name: So Much Better, Streams: 59,026,321, Daily: 9,629
+152. Name: Must Be The Ganja, Streams: 58,233,607, Daily: 17,686
+153. Name: Like Home (feat. Alicia Keys), Streams: 58,174,783, Daily: 5,170
+154. Name: Still Don't Give A Fuck, Streams: 58,079,967, Daily: 21,147
+155. Name: Seduction, Streams: 57,344,885, Daily: 11,752
+156. Name: On Fire, Streams: 57,035,534, Daily: 11,692
+157. Name: *Speedom (Wwc2), Streams: 56,778,752, Daily: 9,939
+158. Name: Kim, Streams: 56,722,298, Daily: 26,256
+159. Name: *My Life, Streams: 56,610,327, Daily: 20,326
+160. Name: Arose, Streams: 56,234,040, Daily: 5,986
+161. Name: Bagpipes From Baghdad, Streams: 56,074,556, Daily: 21,164
+162. Name: Deja Vu, Streams: 55,818,481, Daily: 24,979
+163. Name: Guns Blazing (feat. Dr. Dre & Sly Pyper), Streams: 55,656,728, Daily: 9,099
+164. Name: *Don't Push Me, Streams: 55,469,524, Daily: 32,649
+165. Name: Brainless, Streams: 55,152,641, Daily: 12,091
+166. Name: *Caterpillar (feat. Eminem & King Green), Streams: 54,990,212, Daily: 9,429
+167. Name: 3 a.m., Streams: 54,308,649, Daily: 16,251
+168. Name: So Far..., Streams: 54,089,270, Daily: 7,703
+169. Name: Almost Famous, Streams: 53,223,881, Daily: 9,945
+170. Name: Insane, Streams: 53,194,316, Daily: 16,205
+171. Name: Tone Deaf, Streams: 52,057,692, Daily: 15,326
+172. Name: Rabbit Run, Streams: 51,388,706, Daily: 18,436
+173. Name: Untitled, Streams: 50,924,647, Daily: 10,332
+174. Name: Say What You Say, Streams: 50,656,127, Daily: 17,989
+175. Name: Who Knew, Streams: 50,626,970, Daily: 21,527
+176. Name: You’re Never Over, Streams: 50,165,153, Daily: 10,630
+177. Name: *COFFIN (feat. Eminem), Streams: 50,068,994, Daily: 12,391
+178. Name: Wicked Ways, Streams: 49,653,692, Daily: 7,282
+179. Name: Black Magic (feat. Skylar Grey), Streams: 48,985,622, Daily: 12,466
+180. Name: Alfred - Interlude, Streams: 48,015,652, Daily: 3,654
+181. Name: Puke, Streams: 46,145,331, Daily: 16,066
+182. Name: Drips, Streams: 45,605,131, Daily: 16,796
+183. Name: *Shake That (Remix) - Album Version (Edited), Streams: 45,519,631, Daily: 16,004
+184. Name: Hello, Streams: 45,009,747, Daily: 11,944
+185. Name: Old Time's Sake, Streams: 44,584,941, Daily: 12,562
+186. Name: Stan - Live At 43rd Grammy Awards, Streams: 43,144,722, Daily: 6,092
+187. Name: Untouchable, Streams: 42,545,588, Daily: 3,297
+188. Name: Infinite, Streams: 42,437,169, Daily: 13,990
+189. Name: My Darling, Streams: 42,274,218, Daily: 11,139
+190. Name: Stay Wide Awake, Streams: 42,206,813, Daily: 14,966
+191. Name: Venom - Remix, Streams: 41,921,024, Daily: 13,176
+192. Name: *Numb, Streams: 41,907,136, Daily: 7,812
+193. Name: Fuel, Streams: 41,851,989, Daily: 441,821
+194. Name: If I Had, Streams: 41,725,866, Daily: 13,501
+195. Name: Killer, Streams: 41,635,999, Daily: 11,939
+196. Name: Renaissance, Streams: 41,394,533, Daily: 299,383
+197. Name: Rain Man, Streams: 40,697,712, Daily: 14,905
+198. Name: Evil Deeds, Streams: 40,659,612, Daily: 14,350
+199. Name: Same Song & Dance, Streams: 40,470,136, Daily: 11,307
+200. Name: Habits, Streams: 40,415,147, Daily: 325,831
+201. Name: Need Me (feat. Pink), Streams: 40,393,684, Daily: 5,142
+202. Name: Framed, Streams: 39,897,530, Daily: 4,538
+203. Name: Alfred’s Theme, Streams: 39,549,396, Daily: 11,307
+204. Name: Offended, Streams: 39,460,608, Daily: 4,930
+205. Name: Somebody Save Me, Streams: 38,709,436, Daily: 481,512
+206. Name: Crazy In Love, Streams: 37,329,776, Daily: 13,887
+207. Name: I'm Shady, Streams: 36,846,438, Daily: 11,340
+208. Name: Chloraseptic (feat. Phresher), Streams: 36,841,527, Daily: 3,201
+209. Name: '97 Bonnie & Clyde, Streams: 36,811,496, Daily: 13,625
+210. Name: Bad Meets Evil, Streams: 36,364,173, Daily: 10,933
+211. Name: Book of Rhymes (feat. DJ Premier), Streams: 36,292,663, Daily: 9,771
+212. Name: Brand New Dance, Streams: 36,160,344, Daily: 269,341
+213. Name: As The World Turns, Streams: 35,693,713, Daily: 12,014
+214. Name: Mosh, Streams: 35,582,853, Daily: 11,188
+215. Name: Heat, Streams: 35,426,284, Daily: 3,555
+216. Name: *Calm Down (feat. Eminem), Streams: 34,943,535, Daily: 7,532
+217. Name: Nowhere Fast - Extended Version, Streams: 34,809,274, Daily: 2,781
+218. Name: Remember Me?, Streams: 34,770,655, Daily: 13,121
+219. Name: Chloraseptic (feat. 2 Chainz & Phresher) - Remix, Streams: 34,024,773, Daily: 4,226
+220. Name: Amityville, Streams: 33,310,406, Daily: 11,349
+221. Name: No Apologies - Album Version (Edited), Streams: 33,049,000, Daily: 11,273
+222. Name: Discombobulated, Streams: 32,798,466, Daily: 9,632
+223. Name: *Soldier Like Me, Streams: 32,637,347, Daily: 11,625
+224. Name: My Fault, Streams: 32,413,838, Daily: 13,386
+225. Name: Spend Some Time, Streams: 32,332,807, Daily: 8,931
+226. Name: Revival (Interlude), Streams: 32,003,136, Daily: 2,706
+227. Name: Evil Twin, Streams: 31,691,009, Daily: 5,664
+228. Name: Desperation, Streams: 30,836,530, Daily: 4,518
+229. Name: Evil, Streams: 30,794,303, Daily: 236,735
+230. Name: Underground, Streams: 30,739,876, Daily: 7,528
+231. Name: Trouble, Streams: 29,892,481, Daily: 209,007
+232. Name: *Realest (with Eminem), Streams: 29,533,745, Daily: 33,829
+233. Name: Alfred - Outro, Streams: 29,519,983, Daily: 3,153
+234. Name: Parking Lot - Skit, Streams: 29,398,652, Daily: 3,367
+235. Name: Careful What You Wish For, Streams: 28,979,931, Daily: 9,276
+236. Name: *Doomsday Pt. 2 (with Eminem), Streams: 28,776,040, Daily: 93,489
+237. Name: Lucifer, Streams: 28,649,111, Daily: 220,930
+238. Name: Bump Heads, Streams: 28,603,279, Daily: 56,898
+239. Name: Medicine Ball, Streams: 28,328,221, Daily: 8,411
+240. Name: Encore/Curtains Down, Streams: 28,131,245, Daily: 9,064
+241. Name: These Demons (feat. MAJ), Streams: 27,904,336, Daily: 6,441
+242. Name: *Don't Aproach Me (feat. Eminem), Streams: 26,563,951, Daily: 8,458
+243. Name: Antichrist, Streams: 26,562,274, Daily: 197,729
+244. Name: Cum On Everybody, Streams: 26,302,267, Daily: 9,092
+245. Name: Yellow Brick Road, Streams: 25,882,743, Daily: 8,010
+246. Name: Baby, Streams: 25,711,380, Daily: 4,173
+247. Name: Favorite Bitch (feat. Ty Dolla $ign), Streams: 25,579,691, Daily: 5,445
+248. Name: The Kiss - Skit, Streams: 25,258,816, Daily: 8,663
+249. Name: Elevator, Streams: 25,052,788, Daily: 6,399
+250. Name: Groundhog Day, Streams: 24,879,723, Daily: 4,069
+251. Name: The King and I (feat. CeeLo Green) - From the Original Motion Picture Soundtrack ELVIS, Streams: 24,144,858, Daily: 9,112
+252. Name: Guilty Conscience 2, Streams: 23,765,188, Daily: 177,160
+253. Name: Music Box, Streams: 23,215,060, Daily: 6,352
+254. Name: *Smack That - NBA Version, Streams: 22,481,907, Daily: 26,120
+255. Name: Temporary, Streams: 22,481,628, Daily: 167,371
+256. Name: *USE THIS GOSPEL (feat. Kanye West & Eminem) - REMIX, Streams: 21,360,863, Daily: 12,414
+257. Name: She Loves Me, Streams: 20,899,624, Daily: 4,858
+258. Name: Public Service Announcement, Streams: 20,596,678, Daily: 7,561
+259. Name: Steve Berman - Skit, Streams: 20,566,844, Daily: 5,986
+260. Name: Road Rage, Streams: 19,932,842, Daily: 131,096
+261. Name: *Kill For You, Streams: 19,740,337, Daily: 5,376
+262. Name: *EPMD 2 (feat. Eminem & EPMD), Streams: 19,521,646, Daily: 6,255
+263. Name: Curtains Close, Streams: 19,484,792, Daily: 5,596
+264. Name: Steve Berman, Streams: 19,455,150, Daily: 6,235
+265. Name: Buffalo Bill, Streams: 18,609,737, Daily: 7,149
+266. Name: Bad One, Streams: 18,378,933, Daily: 145,343
+267. Name: *GATman And Robbin, Streams: 18,251,302, Daily: 10,644
+268. Name: Head Honcho, Streams: 18,064,070, Daily: 129,100
+269. Name: *Here Comes the Weekend (feat. Eminem), Streams: 17,733,143, Daily: 2,636
+270. Name: Love You More, Streams: 17,496,114, Daily: 5,730
+271. Name: *We Ain't, Streams: 17,298,164, Daily: 4,595
+272. Name: *Psycho, Streams: 17,077,001, Daily: 12,714
+273. Name: *We All Die One Day, Streams: 16,909,677, Daily: 5,365
+274. Name: We Made You, Streams: 16,872,004, Daily: 1,075
+275. Name: My 1st Single, Streams: 16,862,359, Daily: 5,480
+276. Name: Drop The Bomb On 'Em, Streams: 16,681,371, Daily: 4,964
+277. Name: Hell Breaks Loose, Streams: 16,597,834, Daily: 4,987
+278. Name: *Love Me, Streams: 15,584,303, Daily: 6,297
+279. Name: Dr. West - Skit, Streams: 15,428,160, Daily: 2,931
+280. Name: Taking My Ball, Streams: 14,870,928, Daily: 4,565
+281. Name: Breaking News - skit, Streams: 14,845,053, Daily: 89,228
+282. Name: Lounge - Skit, Streams: 14,556,203, Daily: 3,820
+283. Name: The Kids, Streams: 14,477,206, Daily: 4,422
+284. Name: We As Americans, Streams: 14,421,922, Daily: 4,312
+285. Name: Intro, Streams: 14,346,231, Daily: 1,843
+286. Name: *C’mon Let Me Ride, Streams: 13,830,115, Daily: 2,597
+287. Name: Tonya - Skit, Streams: 13,706,654, Daily: 2,767
+288. Name: Soap - Skit, Streams: 13,430,023, Daily: 3,482
+289. Name: Ken Kaniff - Skit, Streams: 12,898,051, Daily: 3,519
+290. Name: *It Has Been Said (feat. P. Diddy, Eminem & Obie Trice), Streams: 12,746,907, Daily: 5,235
+291. Name: Jimmy Crack Corn - Album Version (Edited), Streams: 12,683,729, Daily: 3,072
+292. Name: Ricky Ticky Toc, Streams: 12,653,525, Daily: 3,607
+293. Name: Mr. Mathers - Skit, Streams: 12,603,865, Daily: 2,492
+294. Name: *Throw It Up, Streams: 12,552,429, Daily: 1,925
+295. Name: *(Rap) Superstar (feat. Eminem & Noreaga), Streams: 12,538,268, Daily: 7,869
+296. Name: Encore, Streams: 12,120,514, Daily: 5,518
+297. Name: Steve Berman - Skit, Streams: 12,059,080, Daily: 2,338
+298. Name: Ken Kaniff - Skit, Streams: 11,878,059, Daily: 3,490
+299. Name: Crack A Bottle - Single Version, Streams: 11,860,379, Daily: 24
+300. Name: Guess Who’s Back - skit, Streams: 11,540,866, Daily: 66,179
+301. Name: Curtains Up, Streams: 11,491,442, Daily: 3,048
+302. Name: *Parables (Remix) [feat. Eminem], Streams: 11,414,068, Daily: 5,763
+303. Name: Key - Skit, Streams: 11,344,370, Daily: 1,661
+304. Name: Jimmy, Brian and Mike, Streams: 11,313,607, Daily: 3,976
+305. Name: The Re-Up, Streams: 11,253,058, Daily: 3,839
+306. Name: *Lord Above, Streams: 11,038,077, Daily: 1,984
+307. Name: *Touchdown, Streams: 10,825,628, Daily: 2,604
+308. Name: Bad Guys Always Die - From "Wild Wild West" Soundtrack, Streams: 10,474,526, Daily: 4,390
+309. Name: We're Back - Album Version (Edited), Streams: 9,391,232, Daily: 3,734
+310. Name: Evil Twin - Skit, Streams: 9,229,251, Daily: 500
+311. Name: *Outro (Obie Trice/ Cheers), Streams: 9,197,215, Daily: 2,805
+312. Name: Campaign Speech, Streams: 9,115,903, Daily: 701
+313. Name: *One Day At A Time - Em's Version, Streams: 8,672,547, Daily: 4,367
+314. Name: Public Enemy #1 - Album Version (Edited), Streams: 8,475,622, Daily: 1,780
+315. Name: *Medicine Man, Streams: 8,466,601, Daily: 7,656
+316. Name: *Writer's Block, Streams: 8,415,368, Daily: 1,233
+317. Name: Paul - Skit, Streams: 8,373,499, Daily: 2,523
+318. Name: Final Thought - Skit, Streams: 8,247,133, Daily: 2,127
+319. Name: *Lady, Streams: 8,141,292, Daily: 2,641
+320. Name: Em Calls Paul - Skit, Streams: 8,066,624, Daily: 2,503
+321. Name: Get You Mad, Streams: 7,710,512, Daily: 2,702
+322. Name: *Peep Show, Streams: 7,413,051, Daily: 5,711
+323. Name: *Black Cotton, Streams: 7,336,857, Daily: 2,299
+324. Name: The Real Slim Shady - Instrumental, Streams: 6,749,945, Daily: 1,832
+325. Name: *Forgot About Dre - Instrumental, Streams: 6,685,348, Daily: 2,519
+326. Name: *Welcome 2 Detroit - International Radio Edit, Streams: 6,100,584, Daily: 14,832
+327. Name: *Welcome To D-Block, Streams: 6,042,636, Daily: 1,712
+328. Name: Stan - Instrumental, Streams: 5,598,751, Daily: 1,675
+329. Name: Stimulate, Streams: 5,398,660, Daily: 3,043
+330. Name: Shady Narcotics - Album Version (Edited), Streams: 4,866,667, Daily: 914
+331. Name: *Welcome 2 Detroit - Album Version (Edited), Streams: 4,748,668, Daily: 17,042
+332. Name: Rap God - Mr. Cii Remix, Streams: 4,722,356, Daily: 2,497
+333. Name: Session One, Streams: 4,705,707, Daily: 2,505
+334. Name: Guilty Conscience - Radio Version, Streams: 4,677,149, Daily: 1,548
+335. Name: Hazardous Youth - A Cappella, Streams: 4,312,240, Daily: 1,247
+336. Name: Mockingbird - Instrumental, Streams: 4,287,673, Daily: 3,056
+337. Name: Greg - A Cappella, Streams: 4,027,400, Daily: 1,192
+338. Name: The Conspiracy Freestyle, Streams: 3,530,047, Daily: 1,925
+339. Name: *What's The Difference - Album Version (Edited), Streams: 3,437,790, Daily: 1,987
+340. Name: The Way I Am - Danny Lohner Remix Version, Streams: 3,382,662, Daily: 1,236
+341. Name: Ridaz, Streams: 3,275,328, Daily: 2,243
+342. Name: *******, Streams: 3,228,940, Daily: 219
+343. Name: The Monster - Instrumental, Streams: 3,038,934, Daily: 1,062
+344. Name: My Name Is - Instrumental, Streams: 2,991,478, Daily: 1,314
+345. Name: Just Don't Give A Fuck - Instrumental, Streams: 2,876,362, Daily: 701
+346. Name: *Hands On You, Streams: 2,817,502, Daily: 859
+347. Name: Just Don't Give A Fuck - A Cappella, Streams: 2,794,080, Daily: 675
+348. Name: *Who Want It (feat. Eminem), Streams: 2,745,356, Daily: 580
+349. Name: *Lean Back (feat. Lil Jon, Eminem, Mase & Remy Martin) - Remix, Streams: 2,655,708, Daily: 674
+350. Name: Guilty Conscience - Instrumental, Streams: 2,635,193, Daily: 712
+351. Name: Guilty Conscience - A Cappella, Streams: 2,414,616, Daily: 631
+352. Name: Don't Front, Streams: 2,359,045, Daily: 3,046
+353. Name: 3 a.m. - Travis Barker Remix, Streams: 2,344,706, Daily: 714
+354. Name: The Way I Am - Instrumental, Streams: 2,328,313, Daily: 578
+355. Name: *Richard, Streams: 2,269,143, Daily: 562
+356. Name: *Busa Rhyme (feat. Eminem), Streams: 2,195,671, Daily: 794
+357. Name: *Rock City (feat. Eminem), Streams: 2,069,795, Daily: 466
+358. Name: *Things Get Worse, Streams: 2,019,496, Daily: 2,891
+359. Name: Superman - Instrumental, Streams: 1,997,673, Daily: 1,585
+360. Name: *Twerk Dat Pop That (feat. Eminem & Royce da 5'9"), Streams: 1,760,733, Daily: 324
+361. Name: Love You More, Streams: 1,720,876, Daily: 1,286
+362. Name: Beautiful - Super Clean Radio Edit, Streams: 1,463,357, Daily: 124
+363. Name: *Nuttin' to Do, Streams: 1,348,894, Daily: 435
+364. Name: *Writer's Block - DJ Premier Remix, Streams: 1,198,717, Daily: 339
+365. Name: Just Don't Give a F**, Streams: 1,184,908, Daily: 537
+366. Name: One Shot 2 Shot, Streams: 1,134,032, Daily: 218
+367. Name: When I'm Gone - Instrumental, Streams: 1,108,216, Daily: 471
+368. Name: Freestyle #1 - Live From Tramps, New York / 1999, Streams: 1,090,625, Daily: 595
+369. Name: *No More To Say, Streams: 1,088,477, Daily: 383
+370. Name: My 1st Single, Streams: 1,062,298, Daily: 140
+371. Name: Till I Collapse - Instrumental, Streams: 1,047,812, Daily: 1,134
+372. Name: *Chemical Warfare, Streams: 987,189, Daily: 909
+373. Name: *From tha D Remix (feat. Eminem & Kid Rock), Streams: 947,426, Daily: 361
+374. Name: Under The Influence, Streams: 916,015, Daily: 234
+375. Name: The Way I Am - Live From Fuji Rock Festival, Japan / 2001, Streams: 886,205, Daily: 550
+376. Name: Freestyle #2 - Live From Tramps, New York / 1999, Streams: 866,286, Daily: 382
+377. Name: Amityville, Streams: 850,686, Daily: 138
+378. Name: Business - Live At The Palace Of Auburn Hills, Detroit / 2002, Streams: 840,183, Daily: 191
+379. Name: *Rock City (feat. Eminem) - Explicit Album Version, Streams: 809,172, Daily: 379
+380. Name: The Real Slim Shady - Live From Fuji Rock Festival, Japan / 2001, Streams: 783,700, Daily: 479
+381. Name: *No Words (feat. Eminem & Big Proof), Streams: 771,486, Daily: 247
+382. Name: Cleanin' Out My Closet - Instrumental, Streams: 768,599, Daily: 643
+383. Name: Jimmy Crack Corn - Cashis Vocal Mix (EX), Streams: 759,564, Daily: 242
+384. Name: Sing For The Moment - Instrumental, Streams: 753,899, Daily: 551
+385. Name: Brain Damage - Live From Tramps, New York / 1999, Streams: 689,008, Daily: 345
+386. Name: Rap God - Instrumental, Streams: 674,891, Daily: 841
+387. Name: Business - Instrumental, Streams: 625,118, Daily: 437
+388. Name: Hellbound, Streams: 609,787, Daily: 684
+389. Name: Survival - Instrumental, Streams: 605,849, Daily: 760
+390. Name: Just Don't Give A Fuck - Live From Tramps, New York / 1999, Streams: 602,910, Daily: 330
+391. Name: *Where I'm At - Bonus Track, Streams: 569,217, Daily: 695
+392. Name: Berzerk - Instrumental, Streams: 500,280, Daily: 713
+393. Name: Square Dance - Instrumental, Streams: 476,907, Daily: 347
+394. Name: Headlights - Instrumental, Streams: 469,225, Daily: 540
+395. Name: Beautiful - Instrumental, Streams: 427,650, Daily: 137
+396. Name: Curtains Up - Skit, Streams: 388,131, Daily: 171
+397. Name: Say What You Say - Instrumental, Streams: 363,891, Daily: 248
+398. Name: *Nuttin' to Do, Streams: 348,503, Daily: 197
+399. Name: The Re-Up - Album Version (Edited), Streams: 304,705, Daily: 24
+400. Name: Without Me - A Cappella, Streams: 269,462, Daily: 84
+401. Name: We Made You - Instrumental, Streams: 240,944, Daily: 57
+402. Name: Public Service Announcement 2000, Streams: 196,562, Daily: 108
+403. Name: *We All Die One Day - Album Version (Edited), Streams: 134,955, Daily: 75
